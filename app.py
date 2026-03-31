@@ -12,14 +12,14 @@ except Exception:
 if "OPENAI_API_KEY" in st.secrets:
     os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
-from speakai import config
-from speakai import state as app_state
-from speakai.transcription import transcribe_audio, load_audio_bytes
-from speakai.audio_analysis import analyze_audio
-from speakai.filler_detection import detect_fillers, filler_density, most_repeated
-from speakai.nlp_feedback import compute_scores, coaching_insights
-from speakai.rewrite import generate_hooks, generate_closings, upgrade_lines
-from speakai.ui_components import hero, score_cards, radar_chart, pace_chart, filler_bar
+import config
+import state as app_state
+from transcription import transcribe_audio, load_audio_bytes
+from audio_analysis import analyze_audio
+from filler_detection import detect_fillers, filler_density, most_repeated
+from nlp_feedback import compute_scores, coaching_insights
+from rewrite import generate_hooks, generate_closings, upgrade_lines
+from ui_components import hero, score_cards, radar_chart, pace_chart, filler_bar
 
 # Optional community component for recording
 try:
